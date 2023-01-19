@@ -11,6 +11,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       emit(UserLoadingState());
       try {
         final users = await _userRepository.getUsers();
+        print('Blog $users');
         emit(UserLoadedSuccessState(users));
       } catch (e) {
         emit(UserLoadingFailState(e.toString()));

@@ -10,7 +10,7 @@ class UserLoadingState extends UserState{
 
 }
 class UserLoadedSuccessState extends UserState{
-  final List<User> users;
+  final User users;
   UserLoadedSuccessState(this.users);
 
   @override

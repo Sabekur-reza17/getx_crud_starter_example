@@ -37,8 +37,8 @@ class Home extends StatelessWidget {
                 child: CircularProgressIndicator(),
               );
             } else if (state is UserLoadedSuccessState) {
-              List<User> userlist = state.users;
-              print('Userlist ${userlist.first.data.toString()}');
+              User userlist = state.users;
+              print('Userlist ${userlist.data.toString()}');
              /* return ListView.builder(
                   itemCount: userlist.length,
                   itemBuilder: (_, index) {

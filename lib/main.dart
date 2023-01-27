@@ -14,8 +14,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:widget_with_codeview/widget_with_codeview.dart';
 
+import 'presentation/my_code_view.dart';
+
 void main() {
-  runApp(MyApp());
+  runApp(const MyCodeView());
 }
 
 /// ! Ensure the files in [filePath] are included in pubspec.yaml

@@ -15,9 +15,10 @@ import 'package:flutter/material.dart';
 import 'package:widget_with_codeview/widget_with_codeview.dart';
 
 import 'presentation/my_code_view.dart';
+import 'presentation/uiComponentDesign/custom_paint.dart';
 
 void main() {
-  runApp(const MyCodeView());
+  runApp( MyApp());
 }
 
 /// ! Ensure the files in [filePath] are included in pubspec.yaml
@@ -29,16 +30,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark(),
       home: Scaffold(
-        body: WidgetWithCodeView(
-          child:  SomeWidget(), //! If empty, will only show the code view.
-          filePath: 'lib/presentation/app.dart',
-          iconBackgroundColor: Colors.white,
-          iconForegroundColor: Colors.pink,
-          labelBackgroundColor: Theme.of(context).canvasColor,
-          labelTextStyle:
-          TextStyle(color: Theme.of(context).textTheme.bodyText1?.color!),
-          showLabelText: true,
-        ),
+        body: Padding(
+          padding: EdgeInsets.all(16),
+          child: CustomPaint(
+            child: Container(child: Text('custom painer'),),
+            painter: CustomRectangle(isFilled: true),
+          ),
+        )
       ),
     );
   }
